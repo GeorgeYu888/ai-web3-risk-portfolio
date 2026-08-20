@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><title>Crypto Risk Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;margin:32px;color:#172033;background:#f6f7f9}
+h1{margin-bottom:4px} table{border-collapse:collapse;width:100%;background:white;margin:16px 0}
+td,th{border:1px solid #d8dde6;padding:8px;text-align:left;font-size:13px} th{background:#101827;color:white}
+.grid{display:grid;grid-template-columns:1fr 2fr;gap:20px} .card{background:white;padding:16px;border:1px solid #d8dde6;border-radius:6px}
+</style></head><body>
+<h1>Crypto Risk Dashboard</h1>
+<p>Synthetic Binance-style transaction review demo: SQL/Python scoring, typology classification and reviewer notes.</p>
+<div class='grid'><div class='card'><h2>KRI Summary</h2><table><tr><th>Typology</th><th>Cases</th><th>Avg score</th><th>Value</th></tr><tr><td>standard_review</td><td>180</td><td>10.8</td><td>$881,644</td></tr>
+<tr><td>high_value_outflow</td><td>25</td><td>54.8</td><td>$413,256</td></tr>
+<tr><td>authentication_or_payment_friction</td><td>10</td><td>51.7</td><td>$97,505</td></tr>
+<tr><td>account_takeover_signal</td><td>5</td><td>59.0</td><td>$56,129</td></tr></table></div>
+<div class='card'><h2>Top Review Queue</h2><table><tr><th>TX</th><th>User</th><th>Asset</th><th>Amount</th><th>Score</th><th>Typology</th><th>Reviewer note</th></tr><tr><td>TX0100</td><td>U1002</td><td>BTC</td><td>$15,552</td><td>73</td><td>account_takeover_signal</td><td>Review TX0100 for account_takeover_signal: large_value_transfer, new_device, country_change.</td></tr>
+<tr><td>TX0050</td><td>U1009</td><td>ETH</td><td>$15,550</td><td>73</td><td>account_takeover_signal</td><td>Review TX0050 for account_takeover_signal: large_value_transfer, new_device, country_change.</td></tr>
+<tr><td>TX0192</td><td>U1008</td><td>USDT</td><td>$15,531</td><td>73</td><td>account_takeover_signal</td><td>Review TX0192 for account_takeover_signal: large_value_transfer, new_device, country_change.</td></tr>
+<tr><td>TX0065</td><td>U1016</td><td>USDT</td><td>$16,308</td><td>72</td><td>high_value_outflow</td><td>Review TX0065 for high_value_outflow: large_value_transfer, failed_attempt, high_value_withdrawal.</td></tr>
+<tr><td>TX0107</td><td>U1016</td><td>BNB</td><td>$15,013</td><td>72</td><td>high_value_outflow</td><td>Review TX0107 for high_value_outflow: large_value_transfer, failed_attempt, high_value_withdrawal.</td></tr>
+<tr><td>TX0211</td><td>U1004</td><td>USDT</td><td>$21,668</td><td>70</td><td>high_value_outflow</td><td>Review TX0211 for high_value_outflow: large_value_transfer, country_change, high_value_withdrawal.</td></tr>
+<tr><td>TX0206</td><td>U1004</td><td>ETH</td><td>$20,624</td><td>70</td><td>high_value_outflow</td><td>Review TX0206 for high_value_outflow: large_value_transfer, country_change, high_value_withdrawal.</td></tr>
+<tr><td>TX0085</td><td>U1015</td><td>ETH</td><td>$16,421</td><td>68</td><td>high_value_outflow</td><td>Review TX0085 for high_value_outflow: large_value_transfer, new_device, high_value_withdrawal.</td></tr>
+<tr><td>TX0120</td><td>U1004</td><td>BTC</td><td>$15,219</td><td>68</td><td>high_value_outflow</td><td>Review TX0120 for high_value_outflow: large_value_transfer, new_device, high_value_withdrawal.</td></tr>
+<tr><td>TX0197</td><td>U1012</td><td>ETH</td><td>$18,958</td><td>57</td><td>authentication_or_payment_friction</td><td>Review TX0197 for authentication_or_payment_friction: large_value_transfer, failed_attempt.</td></tr>
+<tr><td>TX0198</td><td>U1014</td><td>BTC</td><td>$16,087</td><td>57</td><td>authentication_or_payment_friction</td><td>Review TX0198 for authentication_or_payment_friction: large_value_transfer, failed_attempt.</td></tr>
+<tr><td>TX0054</td><td>U1002</td><td>BTC</td><td>$16,058</td><td>57</td><td>authentication_or_payment_friction</td><td>Review TX0054 for authentication_or_payment_friction: large_value_transfer, failed_attempt.</td></tr>
+<tr><td>TX0038</td><td>U1003</td><td>USDT</td><td>$15,839</td><td>57</td><td>authentication_or_payment_friction</td><td>Review TX0038 for authentication_or_payment_friction: large_value_transfer, failed_attempt.</td></tr>
+<tr><td>TX0172</td><td>U1021</td><td>BNB</td><td>$13,262</td><td>57</td><td>authentication_or_payment_friction</td><td>Review TX0172 for authentication_or_payment_friction: large_value_transfer, failed_attempt.</td></tr>
+<tr><td>TX0177</td><td>U1000</td><td>USDT</td><td>$8,714</td><td>57</td><td>authentication_or_payment_friction</td><td>Review TX0177 for authentication_or_payment_friction: failed_attempt, country_change, high_value_withdrawal.</td></tr>
+<tr><td>TX0072</td><td>U1001</td><td>BNB</td><td>$19,321</td><td>55</td><td>standard_review</td><td>Review TX0072 for standard_review: large_value_transfer, country_change.</td></tr>
+<tr><td>TX0045</td><td>U1006</td><td>USDT</td><td>$5,626</td><td>55</td><td>authentication_or_payment_friction</td><td>Review TX0045 for authentication_or_payment_friction: new_device, failed_attempt, high_value_withdrawal.</td></tr>
+<tr><td>TX0053</td><td>U1019</td><td>USDT</td><td>$20,253</td><td>53</td><td>standard_review</td><td>Review TX0053 for standard_review: large_value_transfer, new_device.</td></tr>
+<tr><td>TX0144</td><td>U1017</td><td>USDT</td><td>$15,828</td><td>53</td><td>standard_review</td><td>Review TX0144 for standard_review: large_value_transfer, new_device.</td></tr>
+<tr><td>TX0008</td><td>U1016</td><td>USDT</td><td>$19,397</td><td>50</td><td>high_value_outflow</td><td>Review TX0008 for high_value_outflow: large_value_transfer, high_value_withdrawal.</td></tr></table></div></div>
+</body></html>
