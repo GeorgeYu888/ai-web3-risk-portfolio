@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>George Yu | AI + Web3 Risk Portfolio</title>
+    <meta
+      name="description"
+      content="Practical AI, SQL and Web3 risk operations proof-of-work for fraud, payments, identity, KYC and crypto risk analyst roles."
+    />
+    <style>
+      :root {
+        --bg: #f7f4ee;
+        --ink: #101615;
+        --text: #18201d;
+        --muted: #5c665f;
+        --line: #d7d2c6;
+        --panel: #fffdf8;
+        --green: #1f6b4f;
+        --teal: #0d7c84;
+        --yellow: #d7a727;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      main {
+        min-height: 100vh;
+      }
+      section {
+        padding: 72px clamp(24px, 6vw, 92px);
+      }
+      .hero {
+        display: grid;
+        min-height: 88vh;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 48px;
+        align-items: end;
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(130deg, rgba(31, 107, 79, 0.14), transparent 38%),
+          linear-gradient(320deg, rgba(184, 95, 85, 0.14), transparent 34%),
+          var(--bg);
+      }
+      .eyebrow,
+      .tag {
+        margin: 0 0 14px;
+        color: var(--green);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        overflow-wrap: anywhere;
+      }
+      h1 {
+        margin: 0;
+        max-width: 960px;
+        color: var(--ink);
+        font-size: clamp(3rem, 7vw, 6.2rem);
+        line-height: 0.94;
+        letter-spacing: 0;
+      }
+      h2 {
+        margin: 0;
+        color: var(--ink);
+        font-size: clamp(2rem, 4vw, 3.6rem);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+      h3 {
+        margin: 0 0 14px;
+        color: var(--ink);
+        font-size: 1.42rem;
+        line-height: 1.12;
+      }
+      .lede {
+        max-width: 760px;
+        margin: 28px 0 0;
+        color: var(--muted);
+        font-size: clamp(1.08rem, 1.8vw, 1.38rem);
+        line-height: 1.5;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+      .actions a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border: 1px solid var(--ink);
+        border-radius: 6px;
+        background: var(--ink);
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .actions a + a {
+        background: transparent;
+        color: var(--ink);
+      }
+      .signal {
+        display: grid;
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--line);
+      }
+      .signal div {
+        min-height: 118px;
+        padding: 22px;
+        background: rgba(255, 253, 248, 0.9);
+      }
+      .signal span {
+        display: block;
+        color: var(--teal);
+        font-size: 2.1rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+      .signal p,
+      .section-head p,
+      .split p,
+      .closing p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+      .section-head {
+        max-width: 900px;
+        margin-bottom: 32px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card {
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+      ul {
+        margin: 22px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        position: relative;
+        padding: 11px 0 11px 22px;
+        border-top: 1px solid var(--line);
+        line-height: 1.42;
+      }
+      li::before {
+        position: absolute;
+        left: 0;
+        color: var(--yellow);
+        content: "•";
+        font-weight: 800;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1fr);
+        gap: 58px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: #eef4f0;
+      }
+      .boundary {
+        background: var(--panel);
+      }
+      .boundary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .boundary-grid div {
+        min-height: 150px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f6f0e3;
+        font-weight: 700;
+        line-height: 1.42;
+      }
+      .link-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .link-grid a {
+        display: block;
+        min-height: 116px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--ink);
+        font-weight: 800;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+      .link-grid span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 400;
+      }
+      .closing {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 520px);
+        gap: 44px;
+        align-items: end;
+        background: var(--ink);
+        color: white;
+      }
+      .closing h2,
+      .closing .eyebrow {
+        color: white;
+      }
+      .closing p {
+        color: rgba(255, 255, 255, 0.74);
+      }
+      @media (max-width: 980px) {
+        .hero,
+        .split,
+        .closing {
+          grid-template-columns: 1fr;
+        }
+        .signal {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .grid,
+        .boundary-grid,
+        .link-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 620px) {
+        .hero {
+          min-height: auto;
+          padding-top: 48px;
+        }
+        h1 {
+          font-size: 3rem;
+        }
+        .signal {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">George Yu · AI + Web3 risk operations</p>
+          <h1>Practical proof-of-work for crypto risk, fraud, payments and identity review.</h1>
+          <p class="lede">
+            Built for roles that need explainable risk review, SQL/Python thinking,
+            AI-assisted case notes, dashboard reporting and careful Mandarin-English communication.
+          </p>
+          <div class="actions">
+            <a href="#projects">View projects</a>
+            <a href="#fit">Why it fits</a>
+          </div>
+        </div>
+        <aside class="signal" aria-label="Portfolio highlights">
+          <div><span>3</span><p>work samples</p></div>
+          <div><span>SQL</span><p>case storage and analysis mindset</p></div>
+          <div><span>AI</span><p>bounded reviewer-note support</p></div>
+          <div><span>Risk</span><p>typologies, KRIs and escalation notes</p></div>
+        </aside>
+      </section>
+
+      <section id="projects">
+        <div class="section-head">
+          <p class="eyebrow">Portfolio projects</p>
+          <h2>Built around the analyst loop</h2>
+          <p>
+            Each project turns raw events into a review queue, classifies the issue,
+            documents the reasoning and exposes the result in a manager-readable dashboard.
+          </p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <p class="tag">Transaction monitoring</p>
+            <h3>Crypto Risk Dashboard</h3>
+            <p>Synthetic transaction-risk workflow with abnormal activity scoring, SQLite case storage, typology classification and KRI dashboard output.</p>
+            <ul>
+              <li>Raw event intake from account, device, country, transfer and failure signals</li>
+              <li>Explainable scoring logic rather than black-box claims</li>
+              <li>Reviewer notes for escalation and auditability</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="tag">Case triage</p>
+            <h3>AI Ops Workflow Agent</h3>
+            <p>Small AI-style workflow demo that classifies cases, drafts bounded reviewer notes and recommends next actions while preserving human review.</p>
+            <ul>
+              <li>Queue, priority and rationale output for each case</li>
+              <li>Clear boundary between AI support and accountable human decision-making</li>
+              <li>Useful for fraud, KYC, customer-risk and operations review queues</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="tag">Operational risk</p>
+            <h3>Operations Data Dashboard</h3>
+            <p>Dashboard-style analysis of service operations: issue mix, turnaround, complaints, rework and action-owner follow-up.</p>
+            <ul>
+              <li>Turns unstructured service evidence into manager-readable summaries</li>
+              <li>Connects customer issues, process bottlenecks and follow-up actions</li>
+              <li>Shows transferable analyst discipline outside a formal risk title</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="split" id="fit">
+        <div>
+          <p class="eyebrow">Role fit</p>
+          <h2>What a hiring manager should take from this</h2>
+          <p>
+            The core signal is not a claim of senior fraud or exchange experience. The signal is
+            that George can structure messy operational evidence, build reviewable workflows and
+            explain risk decisions without overstating authority.
+          </p>
+        </div>
+        <ul>
+          <li>Mandarin native and professional working English</li>
+          <li>RG146 Tier 1 held; Australian permanent resident with full work rights</li>
+          <li>Master of Information and Communication Technology</li>
+          <li>Five years personal crypto, FX and gold market participation</li>
+          <li>Hands-on Python, SQL-style analysis, AI workflow and dashboard projects</li>
+          <li>Operations evidence: payment/refund notes, customer records, complaints, rework, action ownership and stakeholder reporting</li>
+        </ul>
+      </section>
+
+      <section class="boundary">
+        <div class="section-head">
+          <p class="eyebrow">Truth boundary</p>
+          <h2>Designed to be interview-defensible</h2>
+          <p>
+            This portfolio supports Binance, PointsBet, DigiCert, Airwallex, AustralianSuper and fintech-risk applications while keeping
+            every claim inside George's verified background.
+          </p>
+        </div>
+        <div class="boundary-grid">
+          <div>No claim of formal Binance, exchange, broker, AML, card-risk, ATO-risk or professional trading employment</div>
+          <div>Crypto market exposure is personal participation and self-built proof-of-work</div>
+          <div>Projects use synthetic or non-sensitive sample data only</div>
+          <div>AI outputs are framed as reviewer support, not automatic risk decisions</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">Review evidence</p>
+          <h2>Supporting documents for recruiters</h2>
+          <p>
+            These files explain how the proof-of-work maps to the target roles and how George would defend it in an interview.
+          </p>
+        </div>
+        <div class="link-grid">
+          <a href="ROLE_MAPPING.md">Role Mapping<span>Maps projects to Binance, PointsBet, DigiCert, Airwallex and AustralianSuper applications.</span></a>
+          <a href="INTERVIEW_PLAYBOOK.md">Interview Playbook<span>Clear answers for project scope, AI boundaries and exact-experience questions.</span></a>
+          <a href="RECRUITER_CASE_STUDY.md">Recruiter Case Study<span>Practical narrative for risk, fraud, compliance operations and AI workflow reviewers.</span></a>
+          <a href="crypto-risk-dashboard/risk_review_queries.sql">SQL Review Pack<span>Example analyst queries for case review, KRI summaries and reviewer workload.</span></a>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div>
+          <p class="eyebrow">Target roles</p>
+          <h2>Risk analyst · Payments fraud · Identity/KYC operations · Credit risk · AML/CTF support</h2>
+        </div>
+        <p>
+          Best used alongside George's tailored applications for Binance risk/community roles,
+          PointsBet Payments/Fraud/Identity, DigiCert authentication, Airwallex credit risk operations,
+          AustralianSuper AML/CTF and adjacent AI-enabled operations analyst positions.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
