@@ -6,11 +6,38 @@ This repo was built as proof-of-work for entry-level and early-career AI, data, 
 
 The goal is to show a practical analyst workflow, not to claim professional exchange, broker, or regulated fraud-investigation employment. All crypto market experience represented here is personal market participation and personal research.
 
-## Role Fit
+## Main Case Study: Web3 Risk Operations System
+
+The strongest project in this repo is `web3-risk-ops-system`.
+
+It models a weekly review workflow for a crypto exchange, wallet, fintech, or crypto-facing platform. The system generates 240 synthetic events across six connected risk scenarios:
+
+- account takeover
+- KYC/KYB review
+- wallet exposure
+- payment fraud
+- market conduct
+- support escalation
+
+The pipeline converts those events into:
+
+- a unified case queue
+- explainable risk scores
+- critical/high/medium/low priorities
+- reviewer notes
+- escalation routes
+- SQLite tables
+- manager dashboard
+- weekly risk report
+- SQL review query pack
+
+This is the practical signal: I can connect different risk desks into one operations view instead of making isolated demos. A team lead can open the dashboard, see scenario mix and priority mix, review the highest-risk cases, and inspect the SQL queries behind the summary.
+
+## Supporting Modules
 
 ### Crypto Risk Dashboard
 
-Shows how I would turn raw transaction events into a review queue:
+Shows a narrower transaction-monitoring workflow:
 
 - assign explainable risk scores
 - flag abnormal account and transaction behaviour
@@ -54,11 +81,11 @@ The current application queue includes Binance risk and AI/KYB/KYC roles, Points
 - communicate next steps without over-promising
 - keep a clear boundary between AI support and human accountability
 
-The portfolio is deliberately built around those mechanics.
+The portfolio is deliberately built around those mechanics. The main Web3 risk system is the strongest evidence because it connects account security, KYC/KYB, wallet exposure, payments fraud, market conduct and customer escalation into a single operational queue.
 
 ## What I Would Add In A Real Team
 
-In a real risk operations team, I would add case outcomes, false-positive labels, reviewer ownership, SLA aging, quality assurance checks, policy references and escalation reasons. I would also separate model or automation suggestions from final human decisions so auditability is preserved.
+In a real risk operations team, I would add case outcomes, false-positive labels, reviewer ownership, SLA aging, quality assurance checks, policy references, escalation reasons, source-system lineage and management sign-off. I would also separate model or automation suggestions from final human decisions so auditability is preserved.
 
 ## Binance-Style Application Narrative
 
