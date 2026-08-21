@@ -10,7 +10,7 @@
     />
     <style>
       :root {
-        --bg: #f7f4ee;
+        --bg: #f4f7f5;
         --ink: #101615;
         --text: #18201d;
         --muted: #5c665f;
@@ -43,8 +43,8 @@
         align-items: end;
         border-bottom: 1px solid var(--line);
         background:
-          linear-gradient(130deg, rgba(31, 107, 79, 0.14), transparent 38%),
-          linear-gradient(320deg, rgba(184, 95, 85, 0.14), transparent 34%),
+          linear-gradient(130deg, rgba(31, 107, 79, 0.13), transparent 38%),
+          linear-gradient(320deg, rgba(13, 124, 132, 0.12), transparent 34%),
           var(--bg);
       }
       .eyebrow,
@@ -149,6 +149,12 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
       }
+      .main-project {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.7fr);
+        gap: 18px;
+        margin-bottom: 20px;
+      }
       .card {
         padding: 26px;
         border: 1px solid var(--line);
@@ -180,6 +186,29 @@
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
         background: #eef4f0;
+      }
+      .scenario-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .scenario-grid div {
+        min-height: 104px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        color: var(--ink);
+        font-weight: 800;
+        line-height: 1.3;
+      }
+      .scenario-grid span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        font-weight: 400;
       }
       .boundary {
         background: var(--panel);
@@ -247,8 +276,10 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .grid,
+        .main-project,
         .boundary-grid,
-        .link-grid {
+        .link-grid,
+        .scenario-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -271,32 +302,77 @@
       <section class="hero">
         <div>
           <p class="eyebrow">George Yu · AI + Web3 risk operations</p>
-          <h1>Practical proof-of-work for crypto risk, fraud, payments and identity review.</h1>
+          <h1>Web3 risk operations system for crypto, fraud, payments and identity review.</h1>
           <p class="lede">
-            Built for roles that need explainable risk review, SQL/Python thinking,
-            AI-assisted case notes, dashboard reporting and careful Mandarin-English communication.
+            A connected Python, SQLite, dashboard and report workflow for account takeover,
+            KYC/KYB, wallet exposure, payment abuse, market conduct and support escalation.
           </p>
           <div class="actions">
-            <a href="#projects">View projects</a>
+            <a href="web3-risk-ops-system/dashboard.html">Open dashboard</a>
+            <a href="web3-risk-ops-system/weekly_risk_report.html">Read report</a>
             <a href="#fit">Why it fits</a>
           </div>
         </div>
         <aside class="signal" aria-label="Portfolio highlights">
-          <div><span>3</span><p>work samples</p></div>
-          <div><span>SQL</span><p>case storage and analysis mindset</p></div>
+          <div><span>240</span><p>synthetic weekly cases</p></div>
+          <div><span>6</span><p>connected Web3 risk scenarios</p></div>
+          <div><span>SQL</span><p>case queue and review queries</p></div>
           <div><span>AI</span><p>bounded reviewer-note support</p></div>
-          <div><span>Risk</span><p>typologies, KRIs and escalation notes</p></div>
         </aside>
       </section>
 
       <section id="projects">
         <div class="section-head">
-          <p class="eyebrow">Portfolio projects</p>
-          <h2>Built around the analyst loop</h2>
+          <p class="eyebrow">Main system</p>
+          <h2>One operational queue, multiple Web3 risk desks</h2>
           <p>
-            Each project turns raw events into a review queue, classifies the issue,
-            documents the reasoning and exposes the result in a manager-readable dashboard.
+            The primary project turns raw events into a single reviewable case queue, classifies
+            the issue, documents the evidence, writes SQLite tables and exposes the output in a
+            manager-readable dashboard and weekly report.
           </p>
+        </div>
+        <div class="main-project">
+          <article class="card">
+            <p class="tag">Primary proof-of-work</p>
+            <h3>Web3 Risk Operations System</h3>
+            <p>
+              Synthetic but practical workflow for an exchange, wallet, fintech or crypto-facing
+              platform. It shows triage, prioritisation, reviewer notes, escalation routes, SQL review
+              questions and weekly KRI reporting.
+            </p>
+            <ul>
+              <li>Creates 240 synthetic events across account, wallet, payment, market and support signals</li>
+              <li>Scores cases with explainable rules and separates critical, high, medium and low priorities</li>
+              <li>Generates dashboard, weekly report, SQLite database, SQL review pack and source event file</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="tag">Review outputs</p>
+            <h3>Open the evidence</h3>
+            <ul>
+              <li><a href="web3-risk-ops-system/dashboard.html">Manager dashboard</a></li>
+              <li><a href="web3-risk-ops-system/weekly_risk_report.html">Weekly risk report</a></li>
+              <li><a href="web3-risk-ops-system/EXECUTIVE_CASE_STUDY.md">Executive case study</a></li>
+              <li><a href="web3-risk-ops-system/risk_ops_review_queries.sql">SQL review queries</a></li>
+              <li><a href="web3-risk-ops-system/web3_risk_ops_pipeline.py">Python pipeline</a></li>
+              <li><a href="web3-risk-ops-system/data/events.csv">Synthetic source events</a></li>
+            </ul>
+          </article>
+        </div>
+        <div class="scenario-grid" aria-label="Connected Web3 risk scenarios">
+          <div>Account takeover<span>new device, geo velocity, failed login clusters</span></div>
+          <div>KYC/KYB review<span>stale profile and enhanced review triggers</span></div>
+          <div>Wallet exposure<span>large outflows and high-risk wallet signals</span></div>
+          <div>Payment fraud<span>chargeback clusters and loss indicators</span></div>
+          <div>Market conduct<span>price deviation and value anomaly review</span></div>
+          <div>Support escalation<span>risk education and Mandarin-English communication</span></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="eyebrow">Supporting demos</p>
+          <h2>Smaller modules that reinforce the main system</h2>
         </div>
         <div class="grid">
           <article class="card">
@@ -378,10 +454,10 @@
           </p>
         </div>
         <div class="link-grid">
-          <a href="ROLE_MAPPING.md">Role Mapping<span>Maps projects to Binance, PointsBet, DigiCert, Airwallex and AustralianSuper applications.</span></a>
+          <a href="ROLE_MAPPING.md">Role Mapping<span>Maps the main system to Binance, PointsBet, DigiCert, Airwallex and AustralianSuper applications.</span></a>
           <a href="INTERVIEW_PLAYBOOK.md">Interview Playbook<span>Clear answers for project scope, AI boundaries and exact-experience questions.</span></a>
           <a href="RECRUITER_CASE_STUDY.md">Recruiter Case Study<span>Practical narrative for risk, fraud, compliance operations and AI workflow reviewers.</span></a>
-          <a href="crypto-risk-dashboard/risk_review_queries.sql">SQL Review Pack<span>Example analyst queries for case review, KRI summaries and reviewer workload.</span></a>
+          <a href="web3-risk-ops-system/risk_ops_review_queries.sql">SQL Review Pack<span>Example analyst queries for case review, KRI summaries and reviewer workload.</span></a>
         </div>
       </section>
 
